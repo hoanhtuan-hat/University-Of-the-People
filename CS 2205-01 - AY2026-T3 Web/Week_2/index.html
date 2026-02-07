@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<head>
-	<style>
-		/* for rectangle */
-		.rectangle 
-		{
-			width: 50px; 
-			height: 50px;
-			text-align: center;
-			line-height: 50px;
-			display: inline-block;
-			color: white;			
-			border-radius: 50%;
-		}
 
-		a { text-decoration: none; } /*no underline for link*/		
-	</style>
-</head>
 <html>
-<body>
- 	<font face="Arial">
+	<head>
+		<style>
+
+			body 
+			{
+				font-family: Arial, sans-serif;
+			}
+
+			/* for rectangle */
+			.rectangle 
+			{
+				width: 50px; 
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				display: inline-block;
+				color: white;			
+				border-radius: 50%;
+				transition: 0.3s; /*animation for hover effect*/
+			}
+			.rectangle:hover {
+				transform: scale(1.1); /*enlarge the rectangle on hover*/
+				filter: brightness(1.2);/*make the rectangle brighter on hover*/
+			}
+
+			a { text-decoration: none; } /*no underline for link*/		
+
+			ol > li {
+				color: black; 
+				font-weight: bold;
+			}
+			ul li {
+				color: darkslategray;
+				font-weight: normal;
+			}
+
+			html {    scroll-behavior: smooth; } /*smooth scrolling for anchor links*/
+		</style>
+	</head>
+
+	<body>	
 		<h1>Travel Blog	</h1>
 		<a href="#session1">
 			<div class="rectangle" style="background-color: lightcoral">1</div>
@@ -38,24 +61,27 @@
 		<div id="session1" >
 			<h2>Destination 1: Europe</h2>
 			<ol>
-				<li>France</li>
+				<li>France
 					<ul>
 						<li>Paris</li>
 						<li>Nice</li>
 						<li>Marseille</li>
 					</ul>
-				<li>Italy</li>
+				</li>
+				<li>Italy
 					<ul>
 						<li>Rome</li>
 						<li>Florence</li>
 						<li>Venice</li>
 					</ul>
-				<li>Greece</li>
+				</li>
+				<li>Greece
 					<ul>
 						<li>Athens</li>
 						<li>Thessaloniki</li>
 						<li>Santorini</li>
 					</ul>
+				</li>
 			</ol>
 		</div>
 
@@ -139,6 +165,5 @@
 				</li>
 			</ol>
 		</div>		
-	</font>
-</body>
+	</body>
 </html>  
