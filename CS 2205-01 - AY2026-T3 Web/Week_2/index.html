@@ -12,16 +12,134 @@
 			color: white;			
 			border-radius: 50%;
 		}
+
+		a { text-decoration: none; } /*no underline for link*/
+		/*.spacer { height: 600px; }*/
 	</style>
 </head>
 <html>
 <body>
  	<font face="Arial">
 		<h1>Travel Blog	</h1>
-		<div class="rectangle" style="background-color: lightcoral">1</div>
-		<div class="rectangle" style="background-color: steelblue;">2</div> 
-		<div class="rectangle" style="background-color: limegreen;">3</div> 
-		<div class="rectangle" style="background-color: orange;">4</div>
+		<a href="#session1">
+			<div class="rectangle" style="background-color: lightcoral">1</div>
+		</a>
+		
+		<a href="#session2">		
+			<div class="rectangle" style="background-color: steelblue;">2</div> 
+		</a>
+
+		<a href="#session3">
+			<div class="rectangle" style="background-color: limegreen;">3</div> 
+		</a>
+		<a href="#session4">
+			<div class="rectangle" style="background-color: orange;">4</div>
+		</a>
+
+		<div id="session1" >
+			<h2>Destination 1: Europe</h2>
+			<ol>
+				<li>France</li>
+					<ul>
+						<li>Paris</li>
+						<li>Nice</li>
+						<li>Marseille</li>
+					</ul>
+				<li>Italy</li>
+					<ul>
+						<li>Rome</li>
+						<li>Florence</li>
+						<li>Venice</li>
+					</ul>
+				<li>Greece</li>
+					<ul>
+						<li>Athens</li>
+						<li>Thessaloniki</li>
+						<li>Santorini</li>
+					</ul>
+			</ol>
+		</div>
+
+		<div id="session2">
+			<h2>Destination 2: Asia</h2>
+			<ol>
+				<li>Japan
+					<ul>
+						<li>Tokyo</li>
+						<li>Kyoto</li>
+						<li>Osaka</li>
+					</ul>
+				</li>
+				<li>China
+					<ul>
+						<li>Beijing</li>
+						<li>Shanghai</li>
+						<li>Xi'an</li>
+					</ul>
+				</li>
+				<li>India
+					<ul>
+						<li>New Delhi</li>
+						<li>Mumbai</li>
+						<li>Jaipur</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+
+		<div id="session3">
+			<h2>Destination 3: America</h2>
+			<ol>
+				<li>USA
+					<ul>
+						<li>New York City</li>
+						<li>Los Angeles</li>
+						<li>Chicago</li>
+					</ul>
+				</li>
+				<li>Brazil
+					<ul>
+						<li>Rio de Janeiro</li>
+						<li>São Paulo</li>
+						<li>Salvador</li>
+					</ul>
+				</li>
+				<li>Canada
+					<ul>
+						<li>Toronto</li>
+						<li>Vancouver</li>
+						<li>Montreal</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+
+		<div id="session4">
+			<h2>Destination 4: Africa</h2>
+			<ol>
+				<li>South Africa
+					<ul>
+						<li>Cape Town</li>
+						<li>Johannesburg</li>
+						<li>Durban</li>
+					</ul>
+				</li>
+				<li>Egypt
+					<ul>
+						<li>Cairo</li>
+						<li>Luxor</li>
+						<li>Sharm El Sheikh</li>
+					</ul>
+				</li>
+				<li>Morocco
+					<ul>
+						<li>Marrakech</li>
+						<li>Casablanca</li>
+						<li>Fez</li>
+					</ul>
+				</li>
+			</ol>
+		</div>		
 	</font>
 </body>
 </html>  
