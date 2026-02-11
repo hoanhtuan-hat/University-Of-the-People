@@ -1,82 +1,84 @@
 <!DOCTYPE html>
+<!-- Declares the document type for HTML5 compliance -->
 
 <html>
 	<head>
 		<style>
+			<!-- Defines CSS styles for the entire page to ensure consistent appearance and interactivity -->
 
 			body 
 			{
-				font-family: Arial, sans-serif;
+				font-family: Arial, sans-serif; /* Sets default font for better readability */
 			}
 
 			/* for rectangle */
 			.rectangle 
 			{
-				width: 50px; 
+				width: 50px; /* Defines size for consistent number blocks */
 				height: 50px;
-				text-align: center;
+				text-align: center; /* Centers text for visual balance */
 				line-height: 50px;
-				display: inline-block;
-				color: white;			
-				border-radius: 50%;
-				transition: 0.3s; /*animation for hover effect*/
+				display: inline-block; /* Allows side-by-side placement of blocks */
+				color: white; /* Ensures text visibility on colored backgrounds */			
+				border-radius: 50%; /* Creates circular shape for aesthetic appeal */
+				transition: 0.3s; /* Enables smooth animation for user engagement */
 			}
 			.rectangle:hover {
-				transform: scale(1.1); /*enlarge the rectangle on hover*/
-				filter: brightness(1.2);/*make the rectangle brighter on hover*/
+				transform: scale(1.1); /* Enlarges on hover to indicate interactivity */
+				filter: brightness(1.2); /* Brightens on hover for visual feedback */
 			}
 
-			a { text-decoration: none; } /*no underline for link*/		
+			a { text-decoration: none; } /* Removes link underlines for cleaner design */		
 
 			ol > li {
-				color: black; 
+				color: black; /* Uses bold black for countries to highlight hierarchy */
 				font-weight: bold;
 			}
 			ul li {
-				color: darkslategray;
+				color: darkslategray; /* Applies subdued color for cities to show sub-levels */
 				font-weight: normal;
 			}
 
-			html {    scroll-behavior: smooth; } /*smooth scrolling for anchor links*/
+			html { scroll-behavior: smooth; } /* Provides smooth scrolling for better user experience */
 		</style>
 	</head>
 
 	<body>	
-		<h1>Travel Blog	</h1>
-		<a href="#session1">
-			<div class="rectangle" style="background-color: lightcoral">1</div>
+		<h1>Travel Blog	</h1> <!-- Main title to introduce the homepage content -->
+		<a href="#session1"> <!-- Links to Europe section for navigation -->
+			<div class="rectangle" style="background-color: lightcoral">1</div> <!-- Number block 1 with unique color for visual distinction -->
 		</a>
 		
-		<a href="#session2">		
-			<div class="rectangle" style="background-color: steelblue;">2</div> 
+		<a href="#session2">	<!-- Links to Asia section for navigation -->	
+			<div class="rectangle" style="background-color: steelblue;">2</div> <!-- Number block 2 with unique color for visual distinction -->
 		</a>
 
-		<a href="#session3">
-			<div class="rectangle" style="background-color: limegreen;">3</div> 
+		<a href="#session3"> <!-- Links to America section for navigation -->
+			<div class="rectangle" style="background-color: limegreen;">3</div> <!-- Number block 3 with unique color for visual distinction -->
 		</a>
-		<a href="#session4">
-			<div class="rectangle" style="background-color: orange;">4</div>
+		<a href="#session4"> <!-- Links to Africa section for navigation -->
+			<div class="rectangle" style="background-color: orange;">4</div> <!-- Number block 4 with unique color for visual distinction -->
 		</a>
 
-		<div id="session1" >
-			<h2>Destination 1: Europe</h2>
-			<ol>
-				<li>France
-					<ul>
+		<div id="session1" > <!-- Container for Europe destinations, targeted by link -->
+			<h2>Destination 1: Europe</h2> <!-- Heading to label the continent group -->
+			<ol> <!-- Ordered list for structured country display -->
+				<li>France <!-- Country entry -->
+					<ul> <!-- Unordered list for related cities -->
 						<li>Paris</li>
 						<li>Nice</li>
 						<li>Marseille</li>
 					</ul>
 				</li>
-				<li>Italy
-					<ul>
+				<li>Italy <!-- Country entry -->
+					<ul> <!-- Unordered list for related cities -->
 						<li>Rome</li>
 						<li>Florence</li>
 						<li>Venice</li>
 					</ul>
 				</li>
-				<li>Greece
-					<ul>
+				<li>Greece <!-- Country entry -->
+					<ul> <!-- Unordered list for related cities -->
 						<li>Athens</li>
 						<li>Thessaloniki</li>
 						<li>Santorini</li>
@@ -85,25 +87,25 @@
 			</ol>
 		</div>
 
-		<div id="session2">
-			<h2>Destination 2: Asia</h2>
-			<ol>
-				<li>Japan
-					<ul>
+		<div id="session2"> <!-- Container for Asia destinations, targeted by link -->
+			<h2>Destination 2: Asia</h2> <!-- Heading to label the continent group -->
+			<ol> <!-- Ordered list for structured country display -->
+				<li>Japan <!-- Country entry -->
+					<ul> <!-- Unordered list for related cities -->
 						<li>Tokyo</li>
 						<li>Kyoto</li>
 						<li>Osaka</li>
 					</ul>
 				</li>
-				<li>China
-					<ul>
+				<li>China <!-- Country entry -->
+					<ul> <!-- Unordered list for related cities -->
 						<li>Beijing</li>
 						<li>Shanghai</li>
 						<li>Xi'an</li>
 					</ul>
 				</li>
-				<li>India
-					<ul>
+				<li>India <!-- Country entry -->
+					<ul> <!-- Unordered list for related cities -->
 						<li>New Delhi</li>
 						<li>Mumbai</li>
 						<li>Jaipur</li>
@@ -112,25 +114,25 @@
 			</ol>
 		</div>
 
-		<div id="session3">
-			<h2>Destination 3: America</h2>
-			<ol>
-				<li>USA
-					<ul>
+		<div id="session3"> <!-- Container for America destinations, targeted by link -->
+			<h2>Destination 3: America</h2> <!-- Heading to label the continent group -->
+			<ol> <!-- Ordered list for structured country display -->
+				<li>USA <!-- Country entry -->
+					<ul> <!-- Unordered list for related cities -->
 						<li>New York City</li>
 						<li>Los Angeles</li>
 						<li>Chicago</li>
 					</ul>
 				</li>
-				<li>Brazil
-					<ul>
+				<li>Brazil <!-- Country entry -->
+					<ul> <!-- Unordered list for related cities -->
 						<li>Rio de Janeiro</li>
 						<li>São Paulo</li>
 						<li>Salvador</li>
 					</ul>
 				</li>
-				<li>Canada
-					<ul>
+				<li>Canada <!-- Country entry -->
+					<ul> <!-- Unordered list for related cities -->
 						<li>Toronto</li>
 						<li>Vancouver</li>
 						<li>Montreal</li>
@@ -139,25 +141,25 @@
 			</ol>
 		</div>
 
-		<div id="session4">
-			<h2>Destination 4: Africa</h2>
-			<ol>
-				<li>South Africa
-					<ul>
+		<div id="session4"> <!-- Container for Africa destinations, targeted by link -->
+			<h2>Destination 4: Africa</h2> <!-- Heading to label the continent group -->
+			<ol> <!-- Ordered list for structured country display -->
+				<li>South Africa <!-- Country entry -->
+					<ul> <!-- Unordered list for related cities -->
 						<li>Cape Town</li>
 						<li>Johannesburg</li>
 						<li>Durban</li>
 					</ul>
 				</li>
-				<li>Egypt
-					<ul>
+				<li>Egypt <!-- Country entry -->
+					<ul> <!-- Unordered list for related cities -->
 						<li>Cairo</li>
 						<li>Luxor</li>
 						<li>Sharm El Sheikh</li>
 					</ul>
 				</li>
-				<li>Morocco
-					<ul>
+				<li>Morocco <!-- Country entry -->
+					<ul> <!-- Unordered list for related cities -->
 						<li>Marrakech</li>
 						<li>Casablanca</li>
 						<li>Fez</li>
@@ -166,4 +168,4 @@
 			</ol>
 		</div>		
 	</body>
-</html>  
+</html>

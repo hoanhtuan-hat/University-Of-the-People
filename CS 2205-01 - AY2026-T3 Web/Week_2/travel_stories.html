@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- Declares the document type for HTML5 compliance -->
+
+<html>
+	<head>
+		<style>
+			<!-- Defines CSS styles for the page to ensure visual appeal and interactivity -->
+
+			body 
+			{
+				font-family: Arial, sans-serif; /* Sets default font for readability */
+			}
+
+			table {
+				width: 80%; /* Sets table width for better layout */
+				border-collapse: collapse; /* Removes spacing between borders */
+				margin: 20px auto; /* Centers table with spacing */
+			}
+
+			th, td {
+				padding: 10px; /* Adds padding for readability */
+				text-align: left; /* Aligns text for consistency */
+				border: 1px solid #ddd; /* Adds colorful borders (light gray here, can customize) */
+			}
+
+			th {
+				background-color: #f2f2f2; /* Light background for headers */
+				font-weight: bold; /* Makes headers bold */
+			}
+
+			tr:nth-child(even) {
+				background-color: #f9f9f9; /* Alternating row colors for easy reading */
+			}
+
+			img {
+				width: 150px; /* Sets image size for uniformity */
+				height: auto; /* Maintains aspect ratio */
+				transition: opacity 0.3s; /* Smooth transition for hover effect */
+			}
+
+			img:hover {
+				opacity: 0.7; /* Changes opacity on hover for interactivity */
+			}
+
+			a { text-decoration: none; } /* Removes link underlines for cleaner design */
+
+			.section {
+				margin-top: 20px; /* Adds spacing between sections */
+				padding: 10px; /* Adds padding for content */
+				border-top: 1px solid #ccc; /* Separates sections visually */
+			}
+
+			html { scroll-behavior: smooth; } /* Enables smooth scrolling for user experience */
+		</style>
+	</head>
+
+	<body>	
+		<h1>Travel Stories</h1> <!-- Main title to introduce the travel stories page -->
+
+		<table> <!-- Table for listing destinations and attractions -->
+			<tr>
+				<th>Destination</th> <!-- Header for destination column -->
+				<th>Attraction</th> <!-- Header for attraction image column -->
+			</tr>
+			<tr>
+				<td>Paris</td> <!-- Destination entry -->
+				<td>
+					<a href="#paris"> <!-- Link to Paris section for jump functionality -->
+						<img src="images/Paris.jpg" alt="Eiffel Tower"> <!-- Image of attraction with alt text for accessibility -->
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>Rome</td> <!-- Destination entry -->
+				<td>
+					<a href="#rome"> <!-- Link to Rome section for jump functionality -->
+						<img src="images/Rome.jpg" alt="Colosseum"> <!-- Image of attraction with alt text for accessibility -->
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>New York</td> <!-- Destination entry -->
+				<td>
+					<a href="#newyork"> <!-- Link to New York section for jump functionality -->
+						<img src="images/NewYork.jpg" alt="Statue of Liberty"> <!-- Image of attraction with alt text for accessibility -->
+					</a>
+				</td>
+			</tr>
+		</table>
+
+		<div id="paris" class="section"> <!-- Section for Paris details, targeted by link -->
+			<h2>Eiffel Tower in Paris</h2> <!-- Heading for the attraction -->
+			<p>The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower. Constructed from 1887 to 1889 as the centerpiece of the 1889 World's Fair, it was initially criticized but has become a global cultural icon of France.</p> <!-- Related information to provide context -->
+		</div>
+
+		<div id="rome" class="section"> <!-- Section for Rome details, targeted by link -->
+			<h2>Colosseum in Rome</h2> <!-- Heading for the attraction -->
+			<p>The Colosseum is an oval amphitheatre in the centre of the city of Rome, Italy, just east of the Roman Forum. It is the largest ancient amphitheatre ever built, and is still the largest standing amphitheatre in the world today, despite its age. Construction began under the emperor Vespasian in 72 AD and was completed in 80 AD under his successor and heir, Titus.</p> <!-- Related information to provide context -->
+		</div>
+
+		<div id="newyork" class="section"> <!-- Section for New York details, targeted by link -->
+			<h2>Statue of Liberty in New York</h2> <!-- Heading for the attraction -->
+			<p>The Statue of Liberty is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States. The copper statue, a gift from the people of France, was designed by French sculptor Frédéric Auguste Bartholdi and its metal framework was built by Gustave Eiffel. The statue was dedicated on October 28, 1886.</p> <!-- Related information to provide context -->
+		</div>		
+	</body>
+</html>
