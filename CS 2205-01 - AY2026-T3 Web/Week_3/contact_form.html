@@ -85,7 +85,8 @@
   </div>
 
   <script>
-    // Utility validators
+    // ===== UTILITY VALIDATION FUNCTIONS =====
+    // These functions check individual field validity: empty check, email format, phone digits.
     function isEmpty(val) { return !val || val.trim() === ''; }
     function validEmail(email) {
       // Allow international characters in local part; simple, permissive check
@@ -95,12 +96,14 @@
       return /^\d{10}$/.test(phone);
     }
 
-    // Show error message helper
+    // ===== ERROR MESSAGE DISPLAY =====
+    // Clears or sets error message text in the specified error container.
     function showError(id, msg) {
       document.getElementById(id).textContent = msg || '';
     }
 
-    // Validate fields; returns true if valid
+    // ===== MAIN VALIDATION FUNCTION =====
+    // Validates all required fields and displays validation errors. Returns true if all pass.
     function validateAll() {
       var name = document.getElementById('name').value;
       var email = document.getElementById('email').value;
@@ -119,7 +122,8 @@
       return ok;
     }
 
-    // On submit: validate client-side before allowing POST
+    // ===== FORM SUBMIT HANDLER =====
+    // Validates all fields on submit. If valid, sends POST request to server. If invalid, shows errors.
     document.getElementById('contactForm').addEventListener('submit', function(e){
       if (!validateAll()) {
         e.preventDefault();
@@ -128,7 +132,8 @@
       // If valid, form will submit using POST to /submit_form
     });
 
-    // Preview button: validates then uses GET by encoding data into query string
+    // ===== PREVIEW BUTTON HANDLER =====
+    // Validates form, then redirects to same page with GET query parameters to show preview.
     document.getElementById('previewBtn').addEventListener('click', function(){
       if (!validateAll()) return;
       var params = new URLSearchParams();
@@ -143,11 +148,12 @@
       window.location.search = params.toString();
     });
 
-    // On page load: if GET params present, populate form and validate before showing preview
+    // ===== PAGE LOAD HANDLER =====
+    // Detects GET preview parameters on load, populates form, validates, and displays preview if valid.
     window.addEventListener('DOMContentLoaded', function(){
       var qs = new URLSearchParams(window.location.search);
       if (qs.get('preview') === '1') {
-        // Populate form fields from query params
+        // Restore form state from URL query parameters
         document.getElementById('name').value = qs.get('name') || '';
         document.getElementById('email').value = qs.get('email') || '';
         document.getElementById('phone').value = qs.get('phone') || '';
@@ -160,7 +166,7 @@
         var inq = qs.get('inquiry');
         if (inq) document.getElementById('inquiry').value = inq;
 
-        // Run same validation used for submit; if valid, show preview; otherwise display errors
+        // Validate restored data; show preview only if all validation passes
         if (validateAll()) {
           showPreviewFromParams(qs);
         } else {
@@ -172,7 +178,8 @@
       }
     });
 
-    // Helper to render preview from URLSearchParams
+    // ===== PREVIEW RENDERER =====
+    // Constructs and displays the preview panel with formatted form data.
     function showPreviewFromParams(qs) {
       var html = '';
       html += '<div class="field-row"><strong>Name:</strong> ' + escapeHtml(qs.get('name') || '') + '</div>';
@@ -185,7 +192,8 @@
       document.getElementById('previewArea').style.display = 'block';
     }
 
-    // Helpers to escape HTML and convert newlines
+    // ===== STRING UTILITY FUNCTIONS =====
+    // Escapes HTML special characters to prevent XSS; converts newlines to <br> for display.
     function escapeHtml(s) { if (!s) return ''; return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
     function nl2br(s) { return s.replace(/\n/g, '<br>'); }
   </script>
