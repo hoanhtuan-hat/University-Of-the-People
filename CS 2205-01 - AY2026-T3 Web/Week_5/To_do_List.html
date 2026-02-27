@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Application</title>
+    <style>
+        /* CSS for basic styling to make the app visually appealing */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .add-task {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .add-task input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .add-task button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .add-task button:hover {
+            background: #218838;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        li input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        li .task-text {
+            flex: 1;
+        }
+        li .completed .task-text {
+            text-decoration: line-through;
+            color: #888;
+        }
+        li button {
+            padding: 5px 10px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        li button.edit {
+            background: #dc3545;
+            color: white;
+        }
+        li button.edit:hover {
+            background: #c82333;
+        }
+        li button.remove {
+            background: #dc3545;
+            color: white;
+        }
+        li button.remove:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="add-task">
+            <input type="text" id="new-task" placeholder="Enter new task">
+            <button id="add-task-btn">Add Task</button>
+        </div>
+        <ul id="todo-list"></ul>
+    </div>
+
+    <script>
+        // JavaScript for DOM manipulation and event handling
+
+        // Function to create a new task item
+        function createTaskItem(taskText) {
+            const li = document.createElement('li');
+            
+            // Checkbox for marking complete/incomplete
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.addEventListener('change', function() {
+                li.classList.toggle('completed', this.checked);
+            });
+            
+            // Span for task text (editable via prompt)
+            const taskSpan = document.createElement('span');
+            taskSpan.className = 'task-text';
+            taskSpan.textContent = taskText;
+            
+            // Edit button
+            const editBtn = document.createElement('button');
+            editBtn.className = 'edit';
+            editBtn.textContent = 'Edit';
+            
+            // Remove button
+            const removeBtn = document.createElement('button');
+            removeBtn.className = 'remove';
+            removeBtn.textContent = 'Remove';
+            
+            // Append elements to li
+            li.appendChild(checkbox);
+            li.appendChild(taskSpan);
+            li.appendChild(editBtn);
+            li.appendChild(removeBtn);
+            
+            return li;
+        }
+
+        // Get DOM elements
+        const addTaskBtn = document.getElementById('add-task-btn');
+        const newTaskInput = document.getElementById('new-task');
+        const todoList = document.getElementById('todo-list');
+
+        // Event listener for adding new tasks
+        addTaskBtn.addEventListener('click', function() {
+            const taskText = newTaskInput.value.trim();
+            if (taskText) {
+                const taskItem = createTaskItem(taskText);
+                todoList.appendChild(taskItem);
+                newTaskInput.value = ''; // Clear input
+            }
+        });
+
+        // Event delegation on the todo list for edit, remove, and checkbox (though checkbox is handled in create)
+        todoList.addEventListener('click', function(event) {
+            const target = event.target;
+            const li = target.closest('li');
+            
+            if (target.classList.contains('edit')) {
+                // Edit task using prompt dialog
+                const taskSpan = li.querySelector('.task-text');
+                const currentText = taskSpan.textContent;
+                const newText = prompt('Edit task:', currentText);
+                if (newText !== null && newText.trim()) {
+                    taskSpan.textContent = newText.trim();
+                }
+            } else if (target.classList.contains('remove')) {
+                // Remove task
+                todoList.removeChild(li);
+            }
+            // Note: Checkbox change is handled directly on the element for simplicity, but could be delegated if needed
+        });
+    </script>
+</body>
+</html>
