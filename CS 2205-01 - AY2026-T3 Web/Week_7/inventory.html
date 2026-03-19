@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bookstore Inventory</title>
+</head>
+<body>
+  <h1>Bookstore Inventory</h1>
+  <ul id="list"></ul>
+
+  <script>
+    const data = {
+      "books": [
+        {
+          "title": "The Great Gatsby",
+          "author": {
+            "firstName": "F. Scott",
+            "lastName": "Fitzgerald"
+          },
+          "publicationYear": 1925,
+          "details": {
+            "publisher": "Charles Scribner's Sons",
+            "pageCount": 218,
+            "available": true
+          }
+        },
+        {
+          "title": "To Kill a Mockingbird",
+          "author": {
+            "firstName": "Harper",
+            "lastName": "Lee"
+          },
+          "publicationYear": 1960,
+          "details": {
+            "publisher": "J.B. Lippincott & Co.",
+            "pageCount": 281,
+            "available": true
+          }
+        },
+        {
+          "title": "1984",
+          "author": {
+            "firstName": "George",
+            "lastName": "Orwell"
+          },
+          "publicationYear": 1949,
+          "details": {
+            "publisher": "Secker & Warburg",
+            "pageCount": 328,
+            "available": false
+          }
+        }
+      ]
+    };
+
+    const ul = document.getElementById("list");
+    data.books.forEach(book => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <strong>${book.title}</strong><br>
+        Author: ${book.author.firstName} ${book.author.lastName}<br>
+        Publication Year: ${book.publicationYear}<br>
+        Publisher: ${book.details.publisher}<br>
+        Page Count: ${book.details.pageCount}<br>
+        Available: ${book.details.available ? "Yes" : "No"}
+      `;
+      ul.appendChild(li);
+    });
+  </script>
+</body>
+</html>
